@@ -48,11 +48,11 @@ from keras.models import Model
 inputs = Input(shape=(32,32,1))
 
 # A layer instance is callable on a tensor, and returns a tensor
-C1 = Conv2D(6, kernel_size = (5,5),activation = sigmoid)(inputs)
+C1 = Conv2D(6, kernel_size = (5,5),activation = 'sigmoid')(inputs)
 S2 = MaxPooling2D(pool_size=(2, 2), strides=(2,2))(C1)
-C3 = Conv2D(16, kernel_size = (5,5),strides=(1, 1),activation = sigmoid)(S2)
+C3 = Conv2D(16, kernel_size = (5,5),strides=(1, 1),activation = 'sigmoid')(S2)
 S4 = MaxPooling2D(pool_size=(2, 2), strides=(2,2))(C3)
-C5 = Conv2D(120, kernel_size = (5,5),strides=(1, 1),activation = sigmoid)(S4)
+C5 = Conv2D(120, kernel_size = (5,5),strides=(1, 1),activation = 'sigmoid')(S4)
 F6 = Dense(84, activation='tanh')(C5)
 F7 = Dense(10, activation='softmax')(F6)
 
